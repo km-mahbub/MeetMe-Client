@@ -1,0 +1,6 @@
+.dropdown-menu a {
+  cursor: pointer;
+}
+a.dropdown-toggle {
+  cursor: pointer;
+}
