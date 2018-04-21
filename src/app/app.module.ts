@@ -20,6 +20,8 @@ import { MemberCardComponent } from './members/member-card/member-card.component
 import { UserService } from './_services/user.service';
 import { AuthModule } from './auth/auth.module';
 import { MemberDetailComponent } from './members/member-detail/member-detail.component';
+import { MemberEditComponent } from './members/member-edit/member-edit.component';
+import { MemberEditResolver } from './_resolvers/member-edit.resolver';
 
 
 
@@ -33,7 +35,9 @@ import { MemberDetailComponent } from './members/member-detail/member-detail.com
     ListsComponent,
     MessagesComponent,
     MemberCardComponent,
-    MemberDetailComponent
+    MemberDetailComponent,
+    MemberEditComponent
+
 ],
   imports: [
     BrowserModule,
@@ -48,7 +52,8 @@ import { MemberDetailComponent } from './members/member-detail/member-detail.com
     AuthService,
     AlertifyService,
     AuthGuard,
-    UserService
+    UserService,
+    MemberEditResolver
   ],
   bootstrap: [AppComponent]
 })
