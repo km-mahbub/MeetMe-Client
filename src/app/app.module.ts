@@ -18,6 +18,8 @@ import { appRoutes } from './routes';
 import { AuthGuard } from './_guards/auth.guard';
 import { MemberCardComponent } from './members/member-card/member-card.component';
 import { UserService } from './_services/user.service';
+import { AuthModule } from './auth/auth.module';
+
 
 
 @NgModule({
@@ -36,7 +38,8 @@ import { UserService } from './_services/user.service';
     HttpModule,
     FormsModule,
     BsDropdownModule.forRoot(),
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    AuthModule
   ],
   providers: [
     AuthService,
