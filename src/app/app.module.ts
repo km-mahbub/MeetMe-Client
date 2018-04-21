@@ -16,6 +16,7 @@ import { MessagesComponent } from './messages/messages.component';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
 import { AuthGuard } from './_guards/auth.guard';
+import { MemberCardComponent } from './members/member-card/member-card.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { AuthGuard } from './_guards/auth.guard';
     RegisterComponent,
     MemberListComponent,
     ListsComponent,
-    MessagesComponent
+    MessagesComponent,
+    MemberCardComponent
 ],
   imports: [
     BrowserModule,
