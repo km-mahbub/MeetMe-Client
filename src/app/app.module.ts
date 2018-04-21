@@ -17,6 +17,7 @@ import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
 import { AuthGuard } from './_guards/auth.guard';
 import { MemberCardComponent } from './members/member-card/member-card.component';
+import { UserService } from './_services/user.service';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { MemberCardComponent } from './members/member-card/member-card.component
   providers: [
     AuthService,
     AlertifyService,
-    AuthGuard
+    AuthGuard,
+    UserService
   ],
   bootstrap: [AppComponent]
 })
