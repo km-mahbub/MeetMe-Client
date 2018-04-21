@@ -55,7 +55,7 @@ import { MemberListResolver } from './_resolvers/member-list.resolver';
     AlertifyService,
     AuthGuard,
     UserService,
-    MemberEditResolver
+    MemberEditResolver,
     MemberDetailResolver,
     MemberListResolver
   ],
