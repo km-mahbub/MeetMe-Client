@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+import { User } from '../../_models/User';
+
 @Component({
   selector: 'app-member-card',
   templateUrl: './member-card.component.html',
