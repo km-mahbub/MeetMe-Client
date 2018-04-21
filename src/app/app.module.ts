@@ -25,7 +25,11 @@ import { MemberEditComponent } from './members/member-edit/member-edit.component
 import { MemberEditResolver } from './_resolvers/member-edit.resolver';
 import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
 import { MemberListResolver } from './_resolvers/member-list.resolver';
+<<<<<<< HEAD
 import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
+=======
+import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
+>>>>>>> ed060b6908b240d07e26a3ae517da0a9d61aa887
 
 
 
@@ -60,7 +64,8 @@ import { PhotoEditorComponent } from './members/photo-editor/photo-editor.compon
     UserService,
     MemberEditResolver,
     MemberDetailResolver,
-    MemberListResolver
+    MemberListResolver,
+    PreventUnsavedChanges
   ],
   bootstrap: [AppComponent]
 })
