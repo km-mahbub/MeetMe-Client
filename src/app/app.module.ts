@@ -3,6 +3,7 @@ import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BsDropdownModule, TabsModule } from 'ngx-bootstrap';
+import { NgxGalleryModule } from 'ngx-gallery';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -48,7 +49,8 @@ import { MemberListResolver } from './_resolvers/member-list.resolver';
     BsDropdownModule.forRoot(),
     RouterModule.forRoot(appRoutes),
     AuthModule,
-    TabsModule.forRoot()
+    TabsModule.forRoot(),
+    NgxGalleryModule
   ],
   providers: [
     AuthService,
