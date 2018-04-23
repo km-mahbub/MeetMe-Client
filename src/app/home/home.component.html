@@ -1,9 +1,41 @@
-<div *ngIf="!registerMode" class="text-center mt-3">
-  <h1>Find your match</h1>
-  <p class="lead">Come on in to view your matches... All you need to do is sign up!</p>
-  <div class="text-center">
+<div *ngIf="!registerMode" class="text-center">
+  <!-- <h1>Find your match</h1>
+  <p class="lead">Come on in to view your matches... All you need to do is sign up!</p> -->
+
+  <carousel [noPause]="noPause">
+    <slide>
+      <img src="https://media1.mensxp.com/media/content/2017/Aug/how-to-maintain-a-long-distance-friendship-1400x653-1501754715_1100x513.jpg" alt="First slide" style="display: block; width: 100%; height:500px">
+      <div class="carousel-caption d-none d-md-block">
+        <h3>First slide label</h3>
+        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+      </div>
+    </slide>
+    <slide>
+      <img src="https://www.quirkybyte.com/wp-content/uploads/2017/08/FRIENDSHIP-780x405.jpg" alt="Second slide" style="display: block; width: 100%; height: 500px">
+      <div class="carousel-caption d-none d-md-block">
+        <h3>Second slide label</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </slide>
+    <slide>
+      <img src="https://images.pexels.com/photos/371285/pexels-photo-371285.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Third slide" style="display: block; width: 100%; height: 500px">
+      <div class="carousel-caption d-none d-md-block">
+        <h3>Third slide label</h3>
+        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+      </div>
+    </slide>
+  </carousel>
+  <br/>
+  <!-- <div>
+    <button type="button" class="btn btn-info"
+            (click)="noPause = !noPause">Toggle pause on hover
+    </button>
+  </div> -->
+
+
+  <div class="text-center" *ngIf="!loggedIn()">
     <button class="btn btn-primary btn-lg" (click)="registerToggle()" >Register</button>
-    <button class="btn btn-info btn-lg">Learn More</button>
+    <!-- <button class="btn btn-info btn-lg">Learn More</button> -->
   </div>
 </div>
 
