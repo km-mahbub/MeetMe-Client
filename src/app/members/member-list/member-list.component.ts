@@ -10,7 +10,7 @@ import { Pagination, PaginatedResult } from '../../_models/Pagination';
   styleUrls: ['./member-list.component.css']
 })
 export class MemberListComponent implements OnInit {
-  
+
   users: User[];
   user: User = JSON.parse(localStorage.getItem('user'));
   genderList = [{value: 'male', display: 'Males'}, {value: 'female', display: 'Females'}];
@@ -23,6 +23,7 @@ export class MemberListComponent implements OnInit {
     this.route.data.subscribe(data => {
       this.users = data['users'].result;
       this.pagination = data['users'].pagination;
+      //console.log(this.user);
       //console.log(this.pagination);
     });
 
