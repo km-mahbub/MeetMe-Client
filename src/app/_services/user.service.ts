@@ -23,10 +23,10 @@ export class UserService {
     }
 
     if (userParams != null) {
-      queryString += 
+      queryString +=
         'minAge=' + userParams.minAge +
         '&maxAge=' + userParams.maxAge +
-        '&gender=' + userParams.gender + 
+        '&gender=' + userParams.gender +
         '&orderBy=' +userParams.orderBy;
     }
 
@@ -62,7 +62,7 @@ export class UserService {
   deletePhoto(userId: number, id: number) {
     return this.authHttp.delete(this.baseUrl + 'users/' + userId + '/photos/' + id).catch(this.handleError);
   }
-  
+
   private handleError(error: any) {
     const applicationError = error.headers.get('Application-Error');
     if(applicationError) {
