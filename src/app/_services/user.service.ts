@@ -14,12 +14,20 @@ export class UserService {
   baseUrl = environment.apiUrl;
 
   constructor(private authHttp: AuthHttp) {}
-  getUsers(page?: number, itemsPerPage?: number, userParams?: any) {
+  getUsers(page?: number, itemsPerPage?: number, userParams?: any, likesParams?: string) {
     const paginatedResult: PaginatedResult<User[]> = new PaginatedResult<User[]>();
     let queryString = '?';
 
     if (page != null && itemsPerPage != null) {
       queryString += 'pageNumber=' + page + '&pageSize=' + itemsPerPage + '&';
+    }
+
+    if (likesParams === 'Likers') {
+      queryString += 'Likers=true&';
+    }
+
+    if (likesParams === 'Likees') {
+      queryString += 'Likees=true&';
     }
 
     if (userParams != null) {

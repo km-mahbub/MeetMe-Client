@@ -34,6 +34,7 @@ import { MemberListResolver } from './_resolvers/member-list.resolver';
 import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
 import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 import { FileUploadModule } from 'ng2-file-upload';
+import { ListsResolver } from './_resolvers/lists.resolver';
 
 
 
@@ -76,7 +77,8 @@ import { FileUploadModule } from 'ng2-file-upload';
     MemberEditResolver,
     MemberDetailResolver,
     MemberListResolver,
-    PreventUnsavedChanges
+    PreventUnsavedChanges,
+    ListsResolver
   ],
   bootstrap: [AppComponent]
 })
