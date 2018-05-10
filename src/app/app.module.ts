@@ -10,6 +10,8 @@ import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { NgxGalleryModule } from 'ngx-gallery';
 import { TimeAgoPipe } from 'time-ago-pipe';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { JwtModule } from '@auth0/angular-jwt';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -25,7 +27,6 @@ import { appRoutes } from './routes';
 import { AuthGuard } from './_guards/auth.guard';
 import { MemberCardComponent } from './members/member-card/member-card.component';
 import { UserService } from './_services/user.service';
-import { AuthModule } from './auth/auth.module';
 import { MemberDetailComponent } from './members/member-detail/member-detail.component';
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
 import { MemberEditResolver } from './_resolvers/member-edit.resolver';
@@ -62,7 +63,6 @@ import { MemberMessagesComponent } from './members/member-messages/member-messag
     FormsModule,
     BsDropdownModule.forRoot(),
     RouterModule.forRoot(appRoutes),
-    AuthModule,
     TabsModule.forRoot(),
     NgxGalleryModule,
     FileUploadModule,
@@ -70,7 +70,16 @@ import { MemberMessagesComponent } from './members/member-messages/member-messag
     BsDatepickerModule.forRoot(),
     PaginationModule.forRoot(),
     ButtonsModule.forRoot(),
-    CarouselModule.forRoot()
+    CarouselModule.forRoot(),
+    HttpClientModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: () => {
+          return localStorage.getItem('token');
+        },
+        whitelistedDomains: ['localhost:5000']
+      }
+    })
   ],
   providers: [
     AuthService,
