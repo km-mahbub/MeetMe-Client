@@ -19,19 +19,19 @@
         <div class="card-body">
           <div>
             <strong>Location:</strong>
-            <p>{{user.city}}, {{user?.country}}</p>
+            <span>{{user.city}}, {{user?.country}}</span>
           </div>
           <div>
             <strong>Age:</strong>
-            <p>{{user.age}}</p>
+            <span>{{user.age}}</span>
           </div>
           <div>
             <strong>Last Active:</strong>
-            <p>{{user.lastActive | timeAgo}}</p>
+            <span>{{user.lastActive | timeAgo}}</span>
           </div>
           <div>
             <strong>Member Since:</strong>
-            <p>{{user.created | date: 'mediumDate'}}</p>
+            <span>{{user.created | date: 'mediumDate'}}</span>
           </div>
         </div>
         <div class="card-footer">
@@ -48,11 +48,11 @@
             <tab heading="Edit Profile">
               <form #editFrom="ngForm" id="editFrom" (ngSubmit)="updateUser()" >
                   <h4>Description</h4>
-                  <textarea class="form-control" name= "introduction" rows="6" [(ngModel)]="user.introduction" ></textarea>
+                  <textarea class="form-control" name= "introduction" rows="4" [(ngModel)]="user.introduction" ></textarea>
                   <h4>Looking For</h4>
-                  <textarea class="form-control" name= "lookingFor" rows="6" [(ngModel)]="user.lookingFor" ></textarea>
+                  <textarea class="form-control" name= "lookingFor" rows="4" [(ngModel)]="user.lookingFor" ></textarea>
                   <h4>Interests</h4>
-                  <textarea class="form-control" name= "interests" rows="6" [(ngModel)]="user.interests" ></textarea>
+                  <textarea class="form-control" name= "interests" rows="4" [(ngModel)]="user.interests" ></textarea>
                   <h4>Location</h4>
                   <div class="form-inline">
                     <label for="city">City</label>
