@@ -38,8 +38,16 @@ import { FileUploadModule } from 'ng2-file-upload';
 import { ListsResolver } from './_resolvers/lists.resolver';
 import { MessagesResolver } from './_resolvers/message.resolver';
 import { MemberMessagesComponent } from './members/member-messages/member-messages.component';
+import { ErrorInterceptorProvider } from './_services/error.interceptor';
 
+export function getAccessToken(): string {
+  return localStorage.getItem('token');
+}
 
+export const jwtConfig = {
+  tokenGetter: getAccessToken,
+  whitelistedDomains: ['localhost:5000', 'meetmebd.azurewebsites.net']
+};
 
 @NgModule({
   declarations: [
@@ -73,12 +81,7 @@ import { MemberMessagesComponent } from './members/member-messages/member-messag
     CarouselModule.forRoot(),
     HttpClientModule,
     JwtModule.forRoot({
-      config: {
-        tokenGetter: () => {
-          return localStorage.getItem('token');
-        },
-        whitelistedDomains: ['localhost:5000']
-      }
+      config: jwtConfig
     })
   ],
   providers: [
@@ -91,7 +94,8 @@ import { MemberMessagesComponent } from './members/member-messages/member-messag
     MemberListResolver,
     PreventUnsavedChanges,
     ListsResolver,
-    MessagesResolver
+    MessagesResolver,
+    ErrorInterceptorProvider
   ],
   bootstrap: [AppComponent]
 })
